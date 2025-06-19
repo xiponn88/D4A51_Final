@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoe Chen - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">ZC</a>
+                <span class="logo-text">｜Portfolio</span>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section" data-aos="fade-up">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="Image/me.jpg" alt="Zoe Chen Profile">
+                </div>
+            </div>
+            <div class="profile-info">
+                <h1 class="name">Zoe Chen</h1>
+                <h2 class="chinese-name">陳希芃</h2>
+                <div class="job-info">
+                    <p>UI/UX Designer</p>
+                    <p>國立陽明交通大學 傳播研究所</p>
+                    <p>大同大學 工業設計 / 中原大學 生物醫學工程學系</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section" data-aos="fade-left">
+            <div class="map-container">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.8995614284617!2d121.5603735816527!3d25.043850742455255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abbf5aa8b305%3A0x4d8281b6ce9664df!2z5Y-w54Gj6Kit6KiI56CU56m26Zmi!5e0!3m2!1szh-TW!2stw!4v1750371152899!5m2!1szh-TW!2stw" 
+               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+            </div>
+        </div>
+
+        <!-- Skills and Personality Section -->
+        <div class="skills-section" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card">
+                <div class="skill-title">Skill</div>
+                <div class="skill-content">
+                    <p><span class="skill-category">前端語言</span>　HTML・CSS・JavaScript</p>
+                    <p><span class="skill-category">設計工具</span>　Illustrator・Figma・Canva・PPT</p>
+                    <p><span class="skill-category">其他軟體</span>　Word・Notion・Rhino 3D</p>
+                    <p>　</p>
+                </div>
+            </div>
+
+            <div class="design-element" data-aos="zoom-in" data-aos-delay="400">
+                <div class="design-container">
+                    <div class="dashed-circle"></div>
+                    <div class="solid-circle"></div>
+                    <div class="small-dot"></div>
+                </div>
+            </div>
+
+            <div class="personality-card" data-aos="fade-left" data-aos-delay="600">
+                <h3 class="personality-title">Personality</h3>
+                <div class="personality-content">
+                    <p>耐心、積極</p>
+                    <p>好奇心</p>
+                    <p>抗壓性高</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Philosophy Section -->
+        <div class="philosophy-section" data-aos="fade-up">
+            <p class="philosophy-text">
+                靈感是起點，行動才是改變的力量。｜ Inspiration is the beginning — action is the force of change.
+            </p>
+        </div>
+
+        <!-- Experience Image Section -->
+        <div class="experience-image-section" data-aos="fade-up">
+            <div class="experience-image-carousel">
+                <div class="carousel-container">
+                    
+                    <div class="carousel-images" id="carouselImages">
+                        <img src="Image/3.png" alt="Industrial Design Project 1" class="carousel-image active">
+                        <img src="Image/1.png" alt="Industrial Design Project 2" class="carousel-image">
+                        <img src="Image/2.png" alt="Industrial Design Project 3" class="carousel-image">
+                        <div class="carousel-image">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DL5nIKphQtc" 
+                                title="YouTube video" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous image">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next image">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dots Indicator -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                        <button class="dot" data-slide="3"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-info" data-aos="fade-left" data-aos-delay="200">
+                <h3 class="experience-title">
+                    <span class="icon-hover">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </span>
+                    經歷、背景
+                </h3>
+                <p class="experience-description">
+                    我是陳希芃，總是對新鮮的事物充滿著好奇心，會嘗試很多不同的事物，並且對於設計有著濃厚的興趣。
+                </p>
+                <p class="experience-description">
+                    在實習與多項設計專案中，我逐步培養出將設計思維與工程技術、使用者研究相結合的能力。無論是建立跨部門溝通的設計系統，或針對用戶需求進行介面優化，我都善於從多元視角切入問題，釐清設計核心，並以實證為基礎提出具實用性的創新解決方案。這些經驗不僅強化了我跨領域整合的能力，也深化了我對使用者經驗與互動流程的理解，進而能協助團隊打造出貼近真實需求的設計成果。
+                </p>
+                <div class="experience-footer">
+                    <span>June 25, 2025</span>
+                    <span class="view-more">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        View More
+                    </span>
+                </div>
+            </div>
+        </div>
+<br><br>
+        <!-- Work Experience Section -->
+        <div class="work-experience-section" data-aos="fade-up">
+            <h2 class="section-title">My Experience</h2>
+
+            <div class="experience-list">
+                <!-- UX Research Intern -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="experience-content">
+                        <div class="experience-dot yellow-dot">
+                            <div class="inner-dot gray-inner"></div>
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">UI/UX 設計實習生</h3>
+                            <p class="company-info">台積電 TSMC　｜　Jul 2024 ~ Aug 2024</p>
+                            <div class="job-description">
+                                <p>　</p>
+                                <p>1. 設計用戶回饋蒐集流程，協助團隊釐清服務需求</p>
+                                <p>2. 與工程師合作，運用 LLM 技術建構設計系統，提升跨部門溝通效率</p>
+                                <p>3. 參與 DesignOps 實務導入，了解設計流程優化策略</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Design Project -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-content">
+                        <div class="experience-dot gray-dot">
+                            <div class="inner-dot yellow-inner"></div>
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">高齡者健康行為 × 跨裝置互動設計專題</h3>
+                            <p class="company-info">互動設計課程專題研究　｜　Sep 2024 ~ Dec 2024</p>
+                            <div class="job-description">
+                                <p>　</p>
+                                <p>1. 聚焦中高齡族群健康行為，結合電視介面與手機互動研究</p>
+                                <p>2. 應用 S-O-R 理論進行訪談與問卷設計，分析使用情境</p>
+                                <p>3. 導出智慧生活裝置的初步互動模型</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graduation Project -->
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="experience-content">
+                        <div class="experience-dot yellow-dot">
+                            <div class="inner-dot gray-inner"></div>
+                        </div>
+                        <div class="experience-details">
+                            <h3 class="job-title">學齡前聽語復健互動教具</h3>
+                            <p class="company-info">畢業專題製作　｜　Apr 2024 ~ May 2025</p>
+                            <div class="job-description">
+                                <p>　</p>
+                                <p>1. 設計針對聽損兒的語句理解與聽覺記憶訓練教具，整合聲光按鈕、圖卡與積木互動</p>
+                                <p>2. 結合聽語復健理論，強化學齡前聽損兒於日常生活中主動參與語言訓練的動機與成效</p>
+                                <p>3. 作品獲專業基金會關注並刊登於官網，並展出於 2025 新一代設計展</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Zoe Chen</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Experience</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:xiponn08@gmail.com">xiponn08@gmail.com</a></li>
+                        <li><a href="tel:+886935918820">+886 935 918 820</a></li>
+                        <li>Taipei, Taiwan</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>More</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Share"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoe Chen. All rights reserved.</p>
+                <p>Designed in Taiwan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <!-- 引入 AOS 的 JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- 初始化 AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

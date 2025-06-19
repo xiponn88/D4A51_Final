@@ -1,0 +1,899 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #8ad0e2;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 控制 ZC 與文字的間距 */
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  color: #111418;  /* 或你想用的顏色 */
+  opacity: 0.8;    /* 稍微淡一點，如果你希望不太搶眼 */
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #707070;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #8ad0e2;
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8ad0e2;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #707070;
+  transition: all 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Header Section */
+.header-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-image {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #d7d6c9;
+  border: 4px solid #ffffff;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-family: serif;
+  letter-spacing: 0.05em;
+}
+
+.chinese-name {
+  font-size: 2.5rem;
+  color: #707070;
+  margin-bottom: 1rem;
+}
+
+.job-info {
+  color: #707070;
+  line-height: 1.4;
+}
+
+/* Map Section */
+.map-section {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  width: 20rem;
+  height: 14rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+}
+
+.map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-highlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 4rem;
+  background-color: #8ad0e2;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.map-text {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  color: #707070;
+  line-height: 1.2;
+}
+
+.map-container {
+  cursor: pointer; /* 滑鼠變小手 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-container:hover {
+  transform: scale(1.03); /* 微放大 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 模擬 hover 效果 */
+}
+
+
+/* Skills Section */
+.skills-section {
+  display: flex;
+  align-items: stretch;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  padding: 2rem 3rem 2rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 18rem;
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.skill-content {
+  color: #707070;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.skill-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #707070;
+}
+
+.design-element {
+  width: 16rem;
+  height: 16rem;
+  background-color: #8ad0e2;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.design-element {
+  cursor: pointer; /* 滑鼠變成小手，像超連結 */
+  transition: transform 0.3s ease;
+}
+
+.design-element:hover {
+  transform: scale(1.05); /* 滑過時微放大 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 模擬 hover 效果 */
+
+  .dashed-circle {
+  animation: spin 10s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.design-container {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border: 8px solid #ffffff;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashed-circle {
+  position: absolute;
+  width: 13rem;
+  height: 13rem;
+  border: 4px dashed #ffffff;
+  border-radius: 50%;
+  transform-origin: center center;
+}
+
+.solid-circle {
+  width: 3rem;
+  height: 3rem;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+}
+
+.small-dot {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.personality-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 32rem;
+  height: 16rem;
+}
+
+.personality-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.personality-content {
+  font-size: 1.125rem;
+  color: #707070;
+  line-height: 1.6;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  margin-bottom: 4rem;
+}
+
+.philosophy-text {
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
+  background-color: #8ad0e2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+
+/* Experience Image Section */
+.experience-image-section {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.experience-image-carousel {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 37.5rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 18.75rem;
+}
+
+.carousel-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn-prev {
+  left: 1rem;
+}
+
+.carousel-btn-next {
+  right: 1rem;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 400px; /* 想要更長就改更高，如 500px、600px */
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-images {
+  height: 100%;
+  display: flex;
+   height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  display: block; /* ← 加這個避免圖片預設是 inline */
+}
+
+.carousel-image iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.experience-info {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 28rem;
+}
+
+.experience-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-hover {
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-hover:hover {
+  background-color: #8ad0e2;
+  color: white;
+}
+
+.experience-description {
+  font-size: 0.875rem;
+  color: #707070;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.experience-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #707070;
+  margin-top: 1rem;
+}
+
+.view-more {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.view-more:hover {
+  color: #8ad0e2;
+}
+
+/* Work Experience Section */
+.work-experience-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 3rem;
+  font-family: serif;
+  letter-spacing: 0.05em;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-item {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.yellow-dot {
+  background-color: #8ad0e2;
+}
+
+.gray-dot {
+  background-color: #dadada;
+}
+
+.inner-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.gray-inner {
+  background-color: #dadada;
+}
+
+.yellow-inner {
+  background-color: #8ad0e2;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.company-info {
+  color: #707070;
+  margin-bottom: 0.5rem;
+}
+
+.job-description {
+  font-size: 0.875rem;
+  color: #707070;
+  line-height: 1.4;
+}
+
+.job-description p {
+  margin-bottom: 0.25rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #ffffff;
+  padding: 3rem 0 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+  color: #707070;
+}
+
+.footer-nav h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  list-style: none;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-nav a,
+.footer-contact a {
+  text-decoration: none;
+  color: #707070;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: #8ad0e2;
+}
+
+.footer-contact li:last-child {
+  color: #707070;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  color: #707070;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #8ad0e2;
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .map-section {
+    position: static;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .skills-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-info {
+    position: static;
+    margin-top: 1rem;
+    max-width: none;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  .main-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .chinese-name {
+    font-size: 2rem;
+  }
+
+  .skill-card,
+  .personality-card {
+    width: 100%;
+  }
+
+  .design-element {
+    width: 100%;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .chinese-name {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skill-title {
+    font-size: 3rem;
+  }
+
+  .personality-title {
+    font-size: 2rem;
+  }
+}
